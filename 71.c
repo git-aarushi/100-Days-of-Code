@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+#define MAX 10
+
+int main(void)
+{
+    int a[MAX][MAX], r, c, i, j;
+
+    printf("Enter the number of rows and columns: ");
+    scanf("%d %d", &r, &c);
+
+    if (r < 1 || r > MAX || c < 1 || c > MAX) {
+        printf("Invalid size\n");
+        return 0;
+    }
+
+    printf("Enter the elements of the matrix:\n");
+    for (i = 0; i < r; i++) {
+        for (j = 0; j < c; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    printf("Matrix:\n");
+    for (i = 0; i < r; i++) {
+        for (j = 0; j < c; j++) {
+            if (j > 0) {
+                printf(" ");
+            }
+            printf("%d", a[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
